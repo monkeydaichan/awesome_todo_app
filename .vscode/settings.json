@@ -2,7 +2,12 @@
     "files.exclude": {
       "**/*.g.dart": true,
       "**/*.freezed.dart": true,
-  
+      ".idea":true,
+      ".fvm":true,
+      ".dart_tool":true,
+      ".metadata":true,
+      ".flutter-plugins*":true,
+      "build":true,
     },
     "files.watcherExclude": {
       "**/build/**": true,
