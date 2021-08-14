@@ -12,17 +12,27 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
+Todo _$TodoFromJson(Map<String, dynamic> json) {
+  return _Todo.fromJson(json);
+}
+
 /// @nodoc
 class _$TodoTearOff {
   const _$TodoTearOff();
 
-  TodoData call(
-      {required String id, required String title, bool completed = false}) {
-    return TodoData(
+  _Todo call(
+      {@HiveField(0) required String id,
+      @HiveField(1) required String title,
+      @HiveField(2) bool completed = false}) {
+    return _Todo(
       id: id,
       title: title,
       completed: completed,
     );
+  }
+
+  Todo fromJson(Map<String, Object> json) {
+    return Todo.fromJson(json);
   }
 }
 
@@ -31,10 +41,14 @@ const $Todo = _$TodoTearOff();
 
 /// @nodoc
 mixin _$Todo {
+  @HiveField(0)
   String get id => throw _privateConstructorUsedError; // uuidで割りつける予定
+  @HiveField(1)
   String get title => throw _privateConstructorUsedError;
+  @HiveField(2)
   bool get completed => throw _privateConstructorUsedError;
 
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $TodoCopyWith<Todo> get copyWith => throw _privateConstructorUsedError;
 }
@@ -43,7 +57,10 @@ mixin _$Todo {
 abstract class $TodoCopyWith<$Res> {
   factory $TodoCopyWith(Todo value, $Res Function(Todo) then) =
       _$TodoCopyWithImpl<$Res>;
-  $Res call({String id, String title, bool completed});
+  $Res call(
+      {@HiveField(0) String id,
+      @HiveField(1) String title,
+      @HiveField(2) bool completed});
 }
 
 /// @nodoc
@@ -78,21 +95,24 @@ class _$TodoCopyWithImpl<$Res> implements $TodoCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class $TodoDataCopyWith<$Res> implements $TodoCopyWith<$Res> {
-  factory $TodoDataCopyWith(TodoData value, $Res Function(TodoData) then) =
-      _$TodoDataCopyWithImpl<$Res>;
+abstract class _$TodoCopyWith<$Res> implements $TodoCopyWith<$Res> {
+  factory _$TodoCopyWith(_Todo value, $Res Function(_Todo) then) =
+      __$TodoCopyWithImpl<$Res>;
   @override
-  $Res call({String id, String title, bool completed});
+  $Res call(
+      {@HiveField(0) String id,
+      @HiveField(1) String title,
+      @HiveField(2) bool completed});
 }
 
 /// @nodoc
-class _$TodoDataCopyWithImpl<$Res> extends _$TodoCopyWithImpl<$Res>
-    implements $TodoDataCopyWith<$Res> {
-  _$TodoDataCopyWithImpl(TodoData _value, $Res Function(TodoData) _then)
-      : super(_value, (v) => _then(v as TodoData));
+class __$TodoCopyWithImpl<$Res> extends _$TodoCopyWithImpl<$Res>
+    implements _$TodoCopyWith<$Res> {
+  __$TodoCopyWithImpl(_Todo _value, $Res Function(_Todo) _then)
+      : super(_value, (v) => _then(v as _Todo));
 
   @override
-  TodoData get _value => super._value as TodoData;
+  _Todo get _value => super._value as _Todo;
 
   @override
   $Res call({
@@ -100,7 +120,7 @@ class _$TodoDataCopyWithImpl<$Res> extends _$TodoCopyWithImpl<$Res>
     Object? title = freezed,
     Object? completed = freezed,
   }) {
-    return _then(TodoData(
+    return _then(_Todo(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -118,17 +138,26 @@ class _$TodoDataCopyWithImpl<$Res> extends _$TodoCopyWithImpl<$Res>
 }
 
 /// @nodoc
+@JsonSerializable()
+@HiveType(typeId: 0)
+class _$_Todo with DiagnosticableTreeMixin implements _Todo {
+  const _$_Todo(
+      {@HiveField(0) required this.id,
+      @HiveField(1) required this.title,
+      @HiveField(2) this.completed = false});
 
-class _$TodoData with DiagnosticableTreeMixin implements TodoData {
-  const _$TodoData(
-      {required this.id, required this.title, this.completed = false});
+  factory _$_Todo.fromJson(Map<String, dynamic> json) =>
+      _$_$_TodoFromJson(json);
 
   @override
+  @HiveField(0)
   final String id;
   @override // uuidで割りつける予定
+  @HiveField(1)
   final String title;
   @JsonKey(defaultValue: false)
   @override
+  @HiveField(2)
   final bool completed;
 
   @override
@@ -149,7 +178,7 @@ class _$TodoData with DiagnosticableTreeMixin implements TodoData {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is TodoData &&
+        (other is _Todo &&
             (identical(other.id, id) ||
                 const DeepCollectionEquality().equals(other.id, id)) &&
             (identical(other.title, title) ||
@@ -168,22 +197,33 @@ class _$TodoData with DiagnosticableTreeMixin implements TodoData {
 
   @JsonKey(ignore: true)
   @override
-  $TodoDataCopyWith<TodoData> get copyWith =>
-      _$TodoDataCopyWithImpl<TodoData>(this, _$identity);
+  _$TodoCopyWith<_Todo> get copyWith =>
+      __$TodoCopyWithImpl<_Todo>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_TodoToJson(this);
+  }
 }
 
-abstract class TodoData implements Todo {
-  const factory TodoData(
-      {required String id, required String title, bool completed}) = _$TodoData;
+abstract class _Todo implements Todo {
+  const factory _Todo(
+      {@HiveField(0) required String id,
+      @HiveField(1) required String title,
+      @HiveField(2) bool completed}) = _$_Todo;
+
+  factory _Todo.fromJson(Map<String, dynamic> json) = _$_Todo.fromJson;
 
   @override
+  @HiveField(0)
   String get id => throw _privateConstructorUsedError;
   @override // uuidで割りつける予定
+  @HiveField(1)
   String get title => throw _privateConstructorUsedError;
   @override
+  @HiveField(2)
   bool get completed => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  $TodoDataCopyWith<TodoData> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$TodoCopyWith<_Todo> get copyWith => throw _privateConstructorUsedError;
 }
