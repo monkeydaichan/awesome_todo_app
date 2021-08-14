@@ -41,3 +41,6 @@ app.*.symbols
 app.*.map.json
 *.g.dart
 *.freezed.dart
+.vscode/
+.fvm/
+bk/
