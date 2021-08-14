@@ -19,15 +19,15 @@ flutter pub run build_runner build --delete-conflicting-outputs
 
 
 ## Reference
-**hive**
+**hive**  
 https://docs.hivedb.dev/#/  
 https://qiita.com/kasa_le/items/f39d759741c736f1d600  
 https://matsumarudesu.com/flutter-hive-begginerdescription/  
 
-**riverpod**
+**riverpod**  
 https://zenn.dev/riscait/books/flutter-riverpod-practical-introduction/viewer/migrate-to-v1
 
-**hive + freezed**
+**hive + freezed**  
 https://github.com/hivedb/hive/issues/225
 
 ### ⚡&ensp;Social Media
