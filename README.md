@@ -1,6 +1,8 @@
 [![pub package](https://img.shields.io/badge/flutter__hooks-0.18.0-blue)](https://pub.dev/packages/riverpod)&ensp; [![pub package](https://img.shields.io/badge/hooks__riverpod-1.0.0--dev.6-blue)](https://pub.dev/packages/riverpod)&ensp; [![pub package](https://img.shields.io/badge/freezed-0.14.2-blue)](https://pub.dev/packages/freezed)&ensp; [![pub package](https://img.shields.io/badge/hive-2.0.4-blue)](https://pub.dev/packages/hive)&ensp; [![pub package](https://img.shields.io/badge/dart-2.12.2-brightgreen)](https://dart.dev/)   
 
 # Todo App
+This repository has basic todo app using flutter.
+freezed, hive, riverpod, state_notifier etc...
 
 ## Packages
 [<img align="center" alt="DaichiYasuda | GitHub" width="28px" src="images/hive.png" />](https://docs.hivedb.dev/#/)&ensp;[Hive](https://pub.dev/packages/hive "Hive documents")&ensp;  [<img align="center" alt="DaichiYasuda | GitHub" width="28px" src="images/riverpod.svg" />](https://riverpod.dev/)&ensp;[Riverpod](https://pub.dev/packages/riverpod "Riverpod documents")&ensp; [state_notifier](https://pub.dev/packages/state_notifier "state_notifier documents")&ensp; [freezed](https://pub.dev/packages/freezed "freezed documents")
