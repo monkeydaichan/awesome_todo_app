@@ -1,6 +1,4 @@
-# awesome_todo_app
-
-A new Flutter project.
+# Todo App (freezed + riverpod + hive + state_notifier)
 
 ## Getting Started
 
